@@ -17,7 +17,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="(Personaje, index) in filteredPersonajes" :key="index">
+          <tr v-for="(Personaje, index) in filtroNombres" :key="index">
             <th>{{ Personaje.id }}</th>
             <td>{{ Personaje.nombre }}</td>
             <td>{{ Personaje.descripcion }}</td>
@@ -64,7 +64,7 @@ export default {
   }),
 
   computed:{
-    filteredPersonajes: function(){
+    filtroNombres: function(){
       return this.Personajes.filter((Personaje) => {
         return Personaje.nombre.match(this.filtro);
       })
